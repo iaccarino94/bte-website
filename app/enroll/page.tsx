@@ -27,7 +27,7 @@ export default function EnrollPage() {
           <ul className="space-y-2 text-charcoal text-sm leading-relaxed list-disc list-inside">
             <li>
               You must be employed by, or in the process of being hired by, a contractor
-              signatory to the IBEW collective bargaining agreement.
+              signatory to the Local 363-A, USWU collective bargaining agreement.
             </li>
             <li>
               The apprenticeship program is provided at <strong>no cost</strong> to the apprentice.

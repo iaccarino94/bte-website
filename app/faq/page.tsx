@@ -12,12 +12,12 @@ const faqs = [
   {
     question: "What is the Building Trades Educational Benefit Fund?",
     answer:
-      "The Building Trades Educational Benefit Fund (BTE) is an ERISA-regulated jointly-trusteed fund that administers electrical apprenticeship training for members of the International Brotherhood of Electrical Workers (IBEW) and the contractors who employ them in New York. The fund covers the cost of related instruction for enrolled apprentices.",
+      "The Building Trades Educational Benefit Fund (BTE) is an ERISA-regulated jointly-trusteed fund that administers electrical apprenticeship training for members of Local 363-A, United Service Workers Union (USWU) — part of IUJAT (International Union of Journeymen and Allied Trades) — and the contractors who employ them in New York. The fund covers the cost of related instruction for enrolled apprentices.",
   },
   {
     question: "Who is eligible to participate in the apprenticeship program?",
     answer:
-      "To be eligible, you must be employed by an electrical contractor that is signatory to the IBEW collective bargaining agreement, or be in the process of securing such employment. Your employer makes contributions to the fund on your behalf, which covers the cost of your training.",
+      "To be eligible, you must be employed by an electrical contractor that is signatory to the Local 363-A, USWU collective bargaining agreement, or be in the process of securing such employment. Your employer makes contributions to the fund on your behalf, which covers the cost of your training.",
   },
   {
     question: "How much does the program cost the apprentice?",
@@ -55,9 +55,9 @@ const faqs = [
       "Not necessarily. The program is designed to train individuals from the ground up. However, some basic aptitude for mathematics and mechanical work is helpful. Contact our office if you have questions about your specific background.",
   },
   {
-    question: "Can I transfer into the program from another IBEW apprenticeship?",
+    question: "Can I transfer into the program from another apprenticeship?",
     answer:
-      "Transfers from other IBEW apprenticeships may be possible depending on your progress and the comparability of prior coursework and OJT hours. Contact our office directly to discuss your situation.",
+      "Transfers from other registered apprenticeship programs may be possible depending on your progress and the comparability of prior coursework and OJT hours. Contact our office directly to discuss your situation.",
   },
   {
     question: "What happens after I complete the five-year program?",

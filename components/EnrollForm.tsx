@@ -151,7 +151,7 @@ export default function EnrollForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="sm:col-span-2">
             <label htmlFor="employed" className={labelClass}>
-              Are you currently employed by an IBEW-signatory electrical contractor?{" "}
+              Are you currently employed by a Local 363-A, USWU signatory electrical contractor?{" "}
               <span className="text-crimson">*</span>
             </label>
             <select id="employed" name="employed" required value={form.employed} onChange={handleChange} className={inputClass}>
@@ -169,7 +169,7 @@ export default function EnrollForm() {
           </div>
           <div>
             <label htmlFor="bookNumber" className={labelClass}>
-              IBEW Book / Member Number (if applicable)
+              Local 363-A Member Number (if applicable)
             </label>
             <input id="bookNumber" name="bookNumber" type="text" value={form.bookNumber} onChange={handleChange} className={inputClass} />
           </div>
@@ -204,7 +204,7 @@ export default function EnrollForm() {
             <select id="hearAbout" name="hearAbout" value={form.hearAbout} onChange={handleChange} className={inputClass}>
               <option value="">Select one</option>
               <option value="employer">My employer / contractor</option>
-              <option value="ibew">IBEW Local Union</option>
+              <option value="local363a">Local 363-A / USWU</option>
               <option value="friend">Friend or family member</option>
               <option value="online">Online search</option>
               <option value="other">Other</option>

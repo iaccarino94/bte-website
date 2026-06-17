@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | BTE Fund",
   },
   description:
-    "The Building Trades Educational Benefit Fund (BTE) administers a five-year electrical apprenticeship program for IBEW members and affiliated contractors in New York.",
+    "The Building Trades Educational Benefit Fund (BTE) administers a five-year electrical apprenticeship program for members of Local 363-A, USWU and affiliated contractors in New York.",
 };
 
 export default function RootLayout({

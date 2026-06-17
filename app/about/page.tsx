@@ -34,8 +34,9 @@ export default function AboutPage() {
             <p>
               The Building Trades Educational Benefit Fund (BTE) is an ERISA-regulated trust
               fund established to provide high-quality electrical apprenticeship training to
-              the members of the International Brotherhood of Electrical Workers (IBEW) and
-              the contractors they work for across New York.
+              members of Local 363-A, United Service Workers Union (USWU) — part of the
+              International Union of Journeymen and Allied Trades (IUJAT) — and the
+              contractors they work for across New York.
             </p>
             <p>
               We believe that a skilled electrical workforce is the backbone of a safe and
@@ -107,7 +108,7 @@ export default function AboutPage() {
             </p>
             <p>
               Employer contributions to the fund are made pursuant to the collective
-              bargaining agreement between signatory contractors and the IBEW. These
+              bargaining agreement between signatory contractors and Local 363-A, USWU. These
               contributions fund the operating costs of the apprenticeship program,
               including instructor salaries, facility costs, and instructional materials.
             </p>

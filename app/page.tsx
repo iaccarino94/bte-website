@@ -118,16 +118,16 @@ function WhoWeServeSection() {
                 <h3 className="font-bold text-navy text-lg mb-2">Apprentices</h3>
                 <p className="text-charcoal leading-relaxed">
                   Individuals entering or currently enrolled in the electrical trade through
-                  an IBEW-affiliated employer. The BTE Fund covers the cost of your
+                  an employer signatory to Local 363-A, USWU. The BTE Fund covers the cost of your
                   instruction — you just show up ready to learn.
                 </p>
               </div>
               <div>
                 <h3 className="font-bold text-navy text-lg mb-2">Employers & Contractors</h3>
                 <p className="text-charcoal leading-relaxed">
-                  Electrical contractors who are signatory to the IBEW collective bargaining
-                  agreement. We assist employers in registering apprenticeship programs with
-                  NYSDOL and meeting their training obligations under the agreement.
+                  Electrical contractors who are signatory to the Local 363-A, USWU collective
+                  bargaining agreement. We assist employers in registering apprenticeship programs
+                  with NYSDOL and meeting their training obligations under the agreement.
                 </p>
               </div>
               <div>
@@ -175,7 +175,7 @@ function HowToApplySection() {
     {
       step: "01",
       title: "Check Eligibility",
-      body: "You must be employed by a contractor signatory to the IBEW collective bargaining agreement or in the process of obtaining employment.",
+      body: "You must be employed by a contractor signatory to the Local 363-A, USWU collective bargaining agreement, or be in the process of obtaining employment.",
     },
     {
       step: "02",

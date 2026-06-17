@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "What is the Building Trades Educational Benefit Fund?",
     answer:
-      "The Building Trades Educational Benefit Fund (BTE) is an ERISA-regulated jointly-trusteed fund that administers electrical apprenticeship training for members of Local 363-A, United Service Workers Union (USWU) — part of IUJAT (International Union of Journeymen and Allied Trades) — and the contractors who employ them in New York. The fund covers the cost of related instruction for enrolled apprentices.",
+      "BTE is a multiemployer ERISA trust fund that administers electrical apprenticeship training on behalf of signatory electrical contractors in New York. BTE is a management-side fund — not a union and not union-administered. BTE works alongside Local 363-A, United Service Workers Union (USWU), part of IUJAT (International Union of Journeymen and Allied Trades), as the employer/management counterpart under the collective bargaining agreement. The fund covers the cost of related instruction for enrolled apprentices.",
   },
   {
     question: "Who is eligible to participate in the apprenticeship program?",
@@ -27,12 +27,12 @@ const faqs = [
   {
     question: "How long is the apprenticeship program?",
     answer:
-      "The program is five years (ten semesters). Each year consists of approximately 180 hours of related classroom instruction and 1,600 to 2,000 hours of on-the-job training under a licensed journeyperson electrician.",
+      "The program is five years (ten semesters). Each year consists of approximately 180 hours of related classroom instruction and 1,600 to 2,000 hours of on-the-job training under a licensed journeyman electrician.",
   },
   {
     question: "What is the pay rate for apprentices?",
     answer:
-      "Apprentice wages are set as a percentage of the journeyperson electrician rate established in the collective bargaining agreement. The percentage increases each year as you advance through the program — so your pay grows as your skills grow. By the time you complete all five years, you earn full journeyperson wages.",
+      "Apprentice wages are set in accordance with the collective bargaining agreement and increase as you progress through the program. Your pay grows with your skills and years of experience.",
   },
   {
     question: "What subjects are covered in the classroom portion?",
@@ -42,12 +42,12 @@ const faqs = [
   {
     question: "Is the program approved or recognized by the state?",
     answer:
-      "Yes. The apprenticeship program is registered with the New York State Department of Labor (NYSDOL) as a recognized apprenticeship program. BTE also assists signatory contractors in registering their own apprenticeship programs with NYSDOL.",
+      "Yes. BTE directly administers its own NYSDOL-registered apprenticeship program, and also helps individual signatory employers register and administer their own NYSDOL-approved programs. BTE's training programs are approved and accredited under the name Building Trades Employers' Educational Association (BTEEA) — the same entity — which is the name used for its state and city approvals from NYSDOL, NYSED, and NYCDOB.",
   },
   {
     question: "What is on-the-job training (OJT)?",
     answer:
-      "OJT is the work experience component of the apprenticeship. You are employed by a signatory contractor and work under the direct supervision of a licensed journeyperson electrician on actual job sites. This is where you develop real-world competency. OJT hours are tracked and must be completed each year to advance.",
+      "OJT is the work experience component of the apprenticeship. You are employed by a signatory contractor and work under the direct supervision of a licensed journeyman electrician on actual job sites. This is where you develop real-world competency. OJT hours are tracked and must be completed each year to advance.",
   },
   {
     question: "Do I need prior electrical experience to apply?",
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "What happens after I complete the five-year program?",
     answer:
-      "Upon successful completion of all coursework and OJT requirements, you become a licensed journeyperson electrician. You can continue your career with a signatory contractor, pursue journeyperson upgrade courses, or explore supervisory and specialty training through our other programs.",
+      "Upon successful completion of all coursework and OJT requirements, you become a licensed journeyman electrician. You can continue your career with a signatory contractor, pursue journeyman upgrade courses, or explore supervisory and specialty training through our other programs.",
   },
   {
     question: "How do I apply or enroll?",

@@ -32,11 +32,17 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-navy mb-6">Our Mission</h2>
           <div className="max-w-3xl space-y-4 text-charcoal leading-relaxed text-lg">
             <p>
-              The Building Trades Educational Benefit Fund (BTE) is an ERISA-regulated trust
-              fund established to provide high-quality electrical apprenticeship training to
-              members of Local 363-A, United Service Workers Union (USWU) — part of the
-              International Union of Journeymen and Allied Trades (IUJAT) — and the
-              contractors they work for across New York.
+              The Building Trades Educational Benefit Fund (BTE) is a multiemployer ERISA
+              trust fund established by and for signatory electrical contractors. BTE
+              operates on the <strong className="text-navy">employer/management side</strong> of
+              the industry — we are not a union and are not union-administered.
+            </p>
+            <p>
+              BTE works alongside Local 363-A, United Service Workers Union (USWU) — part
+              of IUJAT (International Union of Journeymen and Allied Trades) — as the
+              management-side training fund under the collective bargaining agreement.
+              Local 363-A represents the workers; BTE represents the employers&apos; training
+              obligations under that agreement.
             </p>
             <p>
               We believe that a skilled electrical workforce is the backbone of a safe and
@@ -67,14 +73,20 @@ export default function AboutPage() {
               <p>
                 <strong className="text-navy">On-the-job training (OJT)</strong> consists of
                 1,600 to 2,000 hours per year, performed under the direct supervision of a
-                licensed journeyperson electrician. This hands-on experience is what truly
+                licensed journeyman electrician. This hands-on experience is what truly
                 develops trade competency.
               </p>
               <p>
-                <strong className="text-navy">Wages increase each year</strong> as apprentices
-                advance through the program. Starting at a percentage of the journeyperson
-                rate, apprentices reach full journeyperson pay upon successful completion
-                of all five years.
+                <strong className="text-navy">Wages</strong> are set in accordance with the
+                collective bargaining agreement and increase as apprentices advance through
+                the program.
+              </p>
+              <p>
+                BTE directly administers its own NYSDOL-registered apprenticeship program.
+                Separately, BTE also helps individual signatory employers register and
+                administer their own NYSDOL-approved apprenticeship programs. Apprentices
+                may be enrolled through either path — the related instruction and curriculum
+                are the same.
               </p>
             </div>
             <div className="space-y-4">
@@ -109,8 +121,19 @@ export default function AboutPage() {
             <p>
               Employer contributions to the fund are made pursuant to the collective
               bargaining agreement between signatory contractors and Local 363-A, USWU. These
-              contributions fund the operating costs of the apprenticeship program,
+              contributions fund the operating costs of the apprenticeship programs,
               including instructor salaries, facility costs, and instructional materials.
+            </p>
+            <p>
+              BTE also operates under the name <strong className="text-navy">Building Trades
+              Employers&apos; Educational Association (BTEEA)</strong> — this is the same entity,
+              used because BTEEA is the name under which the fund holds its approvals and
+              accreditation from NYSDOL, NYSED, and NYCDOB. BTE&apos;s signatory employer
+              contractors are organized through{" "}
+              <a href="https://www.bieca.net" target="_blank" rel="noopener noreferrer" className="text-navy underline hover:text-gold transition-colors">
+                BIECA (Building Industry Electrical Contractors Association)
+              </a>
+              .
             </p>
             <p>
               Day-to-day administrative functions are handled by our plan administrator,{" "}

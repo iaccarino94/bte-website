@@ -29,7 +29,7 @@ function HeroSection() {
           </h1>
           <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
             A five-year paid apprenticeship at no cost to you. Earn while you learn under
-            licensed journeypersons, with classroom instruction backed by NYSDOL registration.
+            licensed journeymen, with classroom instruction backed by NYSDOL registration.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
@@ -63,7 +63,7 @@ function WhatWeDoSection() {
     {
       icon: "⚡",
       title: "Hands-On Training",
-      body: "Apprentices complete 1,600–2,000 hours of on-the-job training each year alongside a licensed journeyperson electrician — real work on real job sites from day one.",
+      body: "Apprentices complete 1,600–2,000 hours of on-the-job training each year alongside a licensed journeyman electrician — real work on real job sites from day one.",
     },
     {
       icon: "📚",
@@ -73,7 +73,7 @@ function WhatWeDoSection() {
     {
       icon: "📈",
       title: "Paid Progression",
-      body: "Wages start at a percentage of the journeyperson rate and increase each year as you advance. By completion, you're earning full journeyperson pay.",
+      body: "Wages are set in accordance with the collective bargaining agreement and increase as you progress through the program.",
     },
     {
       icon: "🏛️",
@@ -88,8 +88,9 @@ function WhatWeDoSection() {
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">What We Do</h2>
           <p className="text-charcoal text-lg max-w-2xl mx-auto">
-            BTE administers a comprehensive electrical apprenticeship program that combines
-            structured classroom learning with supervised on-the-job experience.
+            BTE directly administers its own NYSDOL-registered electrical apprenticeship
+            program, and also helps individual signatory employers establish and administer
+            their own registered apprenticeship programs.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -117,23 +118,28 @@ function WhoWeServeSection() {
               <div>
                 <h3 className="font-bold text-navy text-lg mb-2">Apprentices</h3>
                 <p className="text-charcoal leading-relaxed">
-                  Individuals entering or currently enrolled in the electrical trade through
-                  an employer signatory to Local 363-A, USWU. The BTE Fund covers the cost of your
-                  instruction — you just show up ready to learn.
+                  Individuals enrolled in BTE&apos;s own apprenticeship program, or registered
+                  through a signatory employer&apos;s NYSDOL-approved program that BTE helps
+                  administer. The BTE Fund covers the cost of related instruction either
+                  way — you just show up ready to learn.
                 </p>
               </div>
               <div>
                 <h3 className="font-bold text-navy text-lg mb-2">Employers & Contractors</h3>
                 <p className="text-charcoal leading-relaxed">
-                  Electrical contractors who are signatory to the Local 363-A, USWU collective
-                  bargaining agreement. We assist employers in registering apprenticeship programs
-                  with NYSDOL and meeting their training obligations under the agreement.
+                  Electrical contractors signatory to the collective bargaining agreement
+                  with Local 363-A, USWU — many of whom are members of{" "}
+                  <a href="https://www.bieca.net" target="_blank" rel="noopener noreferrer" className="text-navy underline hover:text-gold transition-colors">BIECA</a>
+                  {" "}(Building Industry Electrical Contractors Association). BTE is a
+                  management-side fund working on behalf of these employers to deliver
+                  apprenticeship training and help individual contractors register and
+                  administer their own NYSDOL-approved programs.
                 </p>
               </div>
               <div>
-                <h3 className="font-bold text-navy text-lg mb-2">Journeypersons</h3>
+                <h3 className="font-bold text-navy text-lg mb-2">Journeymen</h3>
                 <p className="text-charcoal leading-relaxed">
-                  Licensed electricians seeking code update courses, upgrade training,
+                  Licensed journeymen seeking code update courses, upgrade training,
                   safety certifications, and continuing education. See our{" "}
                   <Link href="/other-programs" className="text-navy underline hover:text-gold transition-colors">
                     Other Programs
@@ -151,7 +157,7 @@ function WhoWeServeSection() {
                 ["Cost to Apprentice", "No cost — fully funded"],
                 ["Classroom Hours", "~180 hours/year"],
                 ["OJT Hours", "1,600–2,000 hours/year"],
-                ["Starting Wage", "Percentage of journeyperson rate"],
+                ["Wages", "Set by the CBA; increase with each year of progression"],
                 ["Certification", "NYSDOL Registered Apprenticeship"],
               ].map(([label, value]) => (
                 <li key={label} className="flex gap-3 items-start">

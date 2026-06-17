@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Other Programs",
   description:
-    "Beyond the core apprenticeship, BTE offers safety training, code update courses, journeyperson upgrade programs, and specialty certifications.",
+    "Beyond the core apprenticeship, BTE offers safety training, code update courses, journeyman upgrade programs, and specialty certifications.",
 };
 
 const programs = [
@@ -17,7 +17,7 @@ const programs = [
   {
     title: "NEC Code Update Courses",
     description:
-      "Continuing education on each new edition of the National Electrical Code. Ensures journeypersons remain current with code changes that affect their daily work.",
+      "Continuing education on each new edition of the National Electrical Code. Ensures journeymen remain current with code changes that affect their daily work.",
     badge: "Code",
   },
   {
@@ -29,7 +29,7 @@ const programs = [
   {
     title: "First Aid & CPR",
     description:
-      "American Heart Association-certified First Aid and CPR/AED training. Offered periodically throughout the year for apprentices and journeypersons alike.",
+      "American Heart Association-certified First Aid and CPR/AED training. Offered periodically throughout the year for apprentices and journeymen alike.",
     badge: "Safety",
   },
   {
@@ -56,7 +56,7 @@ export default function OtherProgramsPage() {
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Other Programs</h1>
           <p className="text-white/80 text-xl max-w-2xl">
             Beyond the core apprenticeship, BTE offers continuing education, safety
-            certifications, and specialty training for journeypersons and employers.
+            certifications, and specialty training for journeymen and employers.
           </p>
         </div>
       </div>

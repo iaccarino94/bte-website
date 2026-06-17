@@ -69,7 +69,7 @@ export default function NycdobSstPage() {
           <div className="max-w-3xl space-y-4 text-charcoal leading-relaxed">
             <p>
               BTE Fund offers OSHA 10-Hour and OSHA 30-Hour construction safety courses
-              throughout the year for apprentices and journeypersons. Completing these
+              throughout the year for apprentices and journeymen. Completing these
               courses through BTE counts toward your SST Card requirements under Local
               Law 196.
             </p>

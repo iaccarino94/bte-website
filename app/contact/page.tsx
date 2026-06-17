@@ -30,10 +30,9 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-navy mb-1">Address</p>
                   <p>
-                    [Address Placeholder]<br />
-                    New York, NY 00000
+                    607 Sunrise Hwy, 2nd Floor<br />
+                    Bellmore, NY 11710
                   </p>
-                  <p className="text-xs text-gray-400 mt-1 italic">Address will be confirmed — placeholder for now</p>
                 </div>
                 <div>
                   <p className="font-semibold text-navy mb-1">Phone</p>
@@ -50,16 +49,15 @@ export default function ContactPage() {
             <div>
               <h2 className="text-xl font-bold text-navy mb-4">Office Hours</h2>
               <div className="space-y-1 text-charcoal text-sm">
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-4">
                   <span>Monday – Friday</span>
-                  <span className="font-medium">[Hours TBD]</span>
+                  <span className="font-medium">9:00 AM – 5:00 PM</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between gap-4">
                   <span>Saturday – Sunday</span>
                   <span className="font-medium">Closed</span>
                 </div>
               </div>
-              <p className="text-xs text-gray-400 mt-2 italic">Office hours will be confirmed — placeholder for now</p>
             </div>
 
             <div className="bg-offwhite rounded-lg p-5">

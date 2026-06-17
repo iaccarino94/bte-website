@@ -21,7 +21,11 @@ export default function Footer() {
               An ERISA-regulated electrical apprenticeship training fund<br />
               serving New York.
             </p>
-            <p className="mt-4 text-white/70 text-sm">
+            <p className="mt-4 text-white/70 text-sm leading-relaxed">
+              607 Sunrise Hwy, 2nd Floor<br />
+              Bellmore, NY 11710
+            </p>
+            <p className="mt-3 text-white/70 text-sm">
               <a href="tel:5164877830" className="hover:text-white transition-colors">
                 (516) 487-7830
               </a>
@@ -29,6 +33,9 @@ export default function Footer() {
               <a href="tel:5164415855" className="hover:text-white transition-colors">
                 (516) 441-5855
               </a>
+            </p>
+            <p className="mt-3 text-white/60 text-xs">
+              Mon – Fri &nbsp;·&nbsp; 9:00 AM – 5:00 PM
             </p>
           </div>
 

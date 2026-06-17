@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const links = [
@@ -26,11 +27,15 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            {/* Logo image placeholder — replace src with /logo.png once provided */}
-            <div className="w-10 h-10 bg-gold rounded flex items-center justify-center font-bold text-navy text-sm leading-tight text-center">
-              BTE
-            </div>
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+            <Image
+              src="/logo.png"
+              alt="BTE Fund logo"
+              width={44}
+              height={44}
+              className="rounded-full bg-white p-0.5"
+              priority
+            />
             <span className="text-white font-semibold text-sm leading-tight hidden sm:block">
               Building Trades<br />Educational Fund
             </span>

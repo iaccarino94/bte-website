@@ -29,8 +29,7 @@ function HeroSection() {
           </h1>
           <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
             A five-year paid apprenticeship at no cost to you. Earn while you learn, with
-            related instruction delivered by BTE as your program&apos;s administrator —
-            whether your employer&apos;s apprenticeship program is NYSDOL-registered or not.
+            related instruction delivered by BTE as your program&apos;s administrator.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
@@ -64,7 +63,7 @@ function WhatWeDoSection() {
     {
       icon: "⚡",
       title: "Hands-On Training",
-      body: "Apprentices complete 1,640 OJT hours/year (NYSDOL-registered track) or 1,875 OJT hours/year (unregistered track) — real work on real job sites from day one.",
+      body: "Apprentices complete 1,600–2,000 OJT hours per year — real work on real job sites from day one.",
     },
     {
       icon: "📚",
@@ -78,8 +77,8 @@ function WhatWeDoSection() {
     },
     {
       icon: "🏛️",
-      title: "Registered & Unregistered Tracks",
-      body: "BTE serves as the related instruction provider and administers training on behalf of signatory employers — individual employers, not BTE, are the sponsors of NYSDOL-registered apprenticeship programs.",
+      title: "Continuing Education",
+      body: "Training doesn't stop at year five. Apprentices who complete the program continue advancing through ongoing coursework and hands-on experience, building toward higher classifications throughout their career.",
     },
   ];
 
@@ -89,10 +88,8 @@ function WhatWeDoSection() {
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">What We Do</h2>
           <p className="text-charcoal text-lg max-w-2xl mx-auto">
-            BTE serves as the related instruction provider and administers apprenticeship
-            training on behalf of signatory employers, including those with NYSDOL-registered
-            apprenticeship programs. Training quality and content are the same whether or not
-            your employer&apos;s program is NYSDOL-registered.
+            The Building Trades Educational Benefit Fund serves as the related instruction
+            provider and administers apprenticeship training on behalf of signatory employers.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -120,10 +117,8 @@ function WhoWeServeSection() {
               <div>
                 <h3 className="font-bold text-navy text-lg mb-2">Apprentices</h3>
                 <p className="text-charcoal leading-relaxed">
-                  Individuals employed by a signatory employer — whether or not that
-                  employer&apos;s apprenticeship program is registered with NYSDOL. BTE
-                  administers related instruction training for all apprentices either way;
-                  the BTE Fund covers the cost regardless of track.
+                  Individuals employed by a signatory employer. The BTE Fund covers the full
+                  cost of related instruction training.
                 </p>
               </div>
               <div>
@@ -132,10 +127,7 @@ function WhoWeServeSection() {
                   Electrical contractors signatory to the collective bargaining agreement
                   with Local 363-A, USWU — many of whom are members of{" "}
                   <a href="https://www.bieca.net" target="_blank" rel="noopener noreferrer" className="text-navy underline hover:text-gold transition-colors">BIECA</a>
-                  {" "}(Building Industry Electrical Contractors Association). BTE is a
-                  management-side fund working on behalf of these employers to deliver
-                  apprenticeship training and help individual contractors register and
-                  administer their own NYSDOL-approved programs.
+                  {" "}(Building Industry Electrical Contractors Association).
                 </p>
               </div>
               <div>
@@ -158,11 +150,9 @@ function WhoWeServeSection() {
                 ["Duration", "5 years (10 semesters)"],
                 ["Cost to Apprentice", "No cost — fully funded"],
                 ["Classroom Hours", "~180 hours/year"],
-                ["OJT Hours (Registered)", "1,640 hours/year"],
-                ["OJT Hours (Unregistered)", "1,875 hours/year"],
+                ["OJT Hours", "1,600–2,000 hours/year"],
                 ["Wages", "Set by the CBA; increase with each year of progression"],
-                ["Program Type", "Related instruction for registered & unregistered apprentices"],
-                ["Upon Completion", "M1 Mechanic (not a license)"],
+                ["Upon Completion", "M1 Mechanic"],
               ].map(([label, value]) => (
                 <li key={label} className="flex gap-3 items-start">
                   <span className="text-gold font-bold text-lg leading-none mt-0.5">—</span>

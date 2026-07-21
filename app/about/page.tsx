@@ -50,6 +50,18 @@ export default function AboutPage() {
               who comes through our program leaves as a highly qualified, code-compliant,
               safety-conscious electrician — ready for a lifelong career in the trade.
             </p>
+            <p>
+              BTE maintains its own fully staffed office handling day-to-day operations, with{" "}
+              <a
+                href="https://www.dickinsongrp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-navy underline hover:text-gold transition-colors"
+              >
+                Dickinson Group
+              </a>
+              {" "}serving as the plan&apos;s third-party administrator.
+            </p>
           </div>
         </section>
 
@@ -60,12 +72,9 @@ export default function AboutPage() {
             <div className="space-y-5 text-charcoal leading-relaxed">
               <p>
                 BTE administers a <strong className="text-navy">five-year electrical apprenticeship
-                training program</strong> for apprentices employed by signatory contractors —
-                whether or not their employer&apos;s apprenticeship program is registered with
-                the New York State Department of Labor (NYSDOL). The program is structured
-                in annual levels, each combining classroom instruction with supervised
-                on-the-job training; training quality and content are the same across both
-                tracks.
+                training program</strong> for apprentices employed by signatory contractors.
+                The program is structured in annual levels, each combining classroom
+                instruction with supervised on-the-job training.
               </p>
               <p>
                 <strong className="text-navy">Classroom instruction</strong> runs approximately
@@ -74,11 +83,10 @@ export default function AboutPage() {
                 All instruction is provided at no cost to the apprentice.
               </p>
               <p>
-                <strong className="text-navy">On-the-job training (OJT)</strong> requirements
-                depend on your track: 1,640 hours per year if your employer&apos;s apprenticeship
-                program is NYSDOL-registered, or 1,875 hours per year if it is not, performed
-                under the supervision of a journeyperson. This hands-on experience is what
-                truly develops trade competency.
+                <strong className="text-navy">On-the-job training (OJT)</strong> runs
+                approximately 1,600–2,000 hours per year, performed under the supervision of
+                a journeyperson. This hands-on experience is what truly develops trade
+                competency.
               </p>
               <p>
                 <strong className="text-navy">Wages</strong> are set in accordance with the
@@ -87,11 +95,8 @@ export default function AboutPage() {
               </p>
               <p>
                 BTE serves as the related instruction provider and administers apprenticeship
-                training on behalf of signatory employers, including those with
-                NYSDOL-registered apprenticeship programs. Individual signatory employers —
-                not BTE — are the sponsors of any NYSDOL-registered program. BTE administers
-                training for all apprentices, whether or not their employer&apos;s program is
-                registered; the related instruction and curriculum are the same either way.
+                training on behalf of signatory employers. Individual signatory employers —
+                not BTE — are the sponsors of any NYSDOL-registered program.
               </p>
             </div>
             <div className="space-y-4">
@@ -113,52 +118,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ERISA & Fund Structure */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-navy mb-6">Fund Structure & Governance</h2>
-          <div className="max-w-3xl space-y-4 text-charcoal leading-relaxed">
-            <p>
-              BTE is a multiemployer trust fund governed under the Employee Retirement Income
-              Security Act of 1974 (ERISA), administered by a Board of Trustees. Employer
-              contributions are made pursuant to the collective bargaining agreement between
-              signatory contractors and Local 363-A, USWU, and fund the operating costs of
-              the apprenticeship program, including instructor salaries, facility costs, and
-              instructional materials.
-            </p>
-            <p>
-              BTE also operates under the name <strong className="text-navy">Building Trades
-              Employers&apos; Educational Association (BTEEA)</strong> — this is the same entity,
-              used because BTEEA is the name under which the fund holds its approvals and
-              accreditation from NYSDOL, NYSED, and NYCDOB. BTE&apos;s signatory employer
-              contractors are organized through{" "}
-              <a href="https://www.bieca.net" target="_blank" rel="noopener noreferrer" className="text-navy underline hover:text-gold transition-colors">
-                BIECA (Building Industry Electrical Contractors Association)
-              </a>
-              .
-            </p>
-            <p>
-              Day-to-day administrative functions are handled by our plan administrator,{" "}
-              <a
-                href="https://www.dickinsongrp.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-navy underline hover:text-gold transition-colors"
-              >
-                Dickinson Group
-              </a>
-              . The fund&apos;s official Plan Documents govern all program rules and eligibility.
-            </p>
-          </div>
-        </section>
-
         {/* Progression Ladder */}
         <section className="mb-16 bg-offwhite rounded-xl p-8 lg:p-12">
           <h2 className="text-3xl font-bold text-navy mb-6">After the Apprenticeship: Mechanic Progression</h2>
           <div className="max-w-3xl space-y-4 text-charcoal leading-relaxed">
             <p>
               Upon successful completion of all coursework and OJT requirements, apprentices
-              become an <strong className="text-navy">M1 Mechanic</strong> — a classification,
-              not a state license. From there, mechanics progress through a structured ladder:
+              become an <strong className="text-navy">M1 Mechanic</strong>. From there,
+              mechanics progress through a structured ladder:
             </p>
             <ul className="space-y-3 list-disc list-inside">
               <li>
@@ -176,10 +143,9 @@ export default function AboutPage() {
               </li>
             </ul>
             <p>
-              Journeyman rank is a BTE recognition/classification, distinct from holding a
-              state electrician&apos;s license. Throughout this progression, mechanics can
-              continue their career with a signatory contractor and explore supervisory and
-              specialty training through our{" "}
+              Throughout this progression, mechanics can continue their career with a
+              signatory contractor and explore supervisory and specialty training through
+              our{" "}
               <Link href="/other-programs" className="text-navy underline hover:text-gold transition-colors">
                 Other Programs
               </Link>

@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "How long is the apprenticeship program?",
     answer:
-      "The program is five years (ten semesters). Each year consists of 180 hours of related classroom instruction. OJT hours depend on your track: 1,640 hours/year if your employer's apprenticeship program is NYSDOL-registered, or 1,875 hours/year if it is not, performed under the supervision of a journeyperson — training quality and content are the same either way.",
+      "The program is five years (ten semesters). Each year consists of 180 hours of related classroom instruction and approximately 1,600–2,000 hours of on-the-job training, performed under the supervision of a journeyperson.",
   },
   {
     question: "What is the pay rate for apprentices?",
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "What happens after I complete the five-year program?",
     answer:
-      "Upon successful completion of all coursework and OJT requirements, you become an M1 Mechanic — a classification, not a state license. From there, you progress through a structured ladder: M1 → M2 Mechanic (1,875 cumulative work hours plus 4 of the 10 M1/M2 classes offered that year), M2 → M Mechanic (another 1,875 cumulative work hours plus 4 more M1/M2 classes), and M Mechanic → Journeyman rank — which has no hour requirement but requires passing BTE's internal test or presenting a valid state electrician's license. Journeyman rank is a BTE recognition/classification, distinct from holding a state electrician's license. Throughout this progression you can continue your career with a signatory contractor and explore supervisory and specialty training through our other programs.",
+      "Upon successful completion of all coursework and OJT requirements, you become an M1 Mechanic. From there, you progress through a structured ladder: M1 → M2 Mechanic (1,875 cumulative work hours plus 4 of the 10 M1/M2 classes offered that year), M2 → M Mechanic (another 1,875 cumulative work hours plus 4 more M1/M2 classes), and M Mechanic → Journeyman rank, which requires passing BTE's internal test or presenting a valid state electrician's license. Throughout this progression you can continue your career with a signatory contractor and explore supervisory and specialty training through our other programs.",
   },
   {
     question: "How do I apply or enroll?",

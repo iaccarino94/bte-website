@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "How long is the apprenticeship program?",
     answer:
-      "The program is five years (ten semesters). Each year consists of approximately 180 hours of related classroom instruction and 1,600 to 2,000 hours of on-the-job training under a licensed journeyman electrician.",
+      "The program is five years (ten semesters). Each year consists of 180 hours of related classroom instruction. OJT hours depend on your track: 1,640 hours/year if your employer's apprenticeship program is NYSDOL-registered, or 1,875 hours/year if it is not, performed under the supervision of a journeyperson — training quality and content are the same either way.",
   },
   {
     question: "What is the pay rate for apprentices?",
@@ -42,12 +42,12 @@ const faqs = [
   {
     question: "Is the program approved or recognized by the state?",
     answer:
-      "Yes. BTE directly administers its own NYSDOL-registered apprenticeship program, and also helps individual signatory employers register and administer their own NYSDOL-approved programs. BTE's training programs are approved and accredited under the name Building Trades Employers' Educational Association (BTEEA) — the same entity — which is the name used for its state and city approvals from NYSDOL, NYSED, and NYCDOB.",
+      "Yes. BTE serves as the related instruction provider and administers apprenticeship training on behalf of signatory employers, including those with NYSDOL-registered apprenticeship programs. Individual signatory employers, not BTE, are the sponsors of NYSDOL-registered programs. BTE's training programs are approved and accredited under the name Building Trades Employers' Educational Association (BTEEA) — the same entity — which is the name used for its state and city approvals from NYSDOL, NYSED, and NYCDOB.",
   },
   {
     question: "What is on-the-job training (OJT)?",
     answer:
-      "OJT is the work experience component of the apprenticeship. You are employed by a signatory contractor and work under the direct supervision of a licensed journeyman electrician on actual job sites. This is where you develop real-world competency. OJT hours are tracked and must be completed each year to advance.",
+      "OJT is the work experience component of the apprenticeship. You are employed by a signatory contractor and work under the direct supervision of a journeyperson on actual job sites. This is where you develop real-world competency. OJT hours are tracked and must be completed each year to advance.",
   },
   {
     question: "Do I need prior electrical experience to apply?",
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "What happens after I complete the five-year program?",
     answer:
-      "Upon successful completion of all coursework and OJT requirements, you become a licensed journeyman electrician. You can continue your career with a signatory contractor, pursue journeyman upgrade courses, or explore supervisory and specialty training through our other programs.",
+      "Upon successful completion of all coursework and OJT requirements, you become an M1 Mechanic — a classification, not a state license. From there, you progress through a structured ladder: M1 → M2 Mechanic (1,875 cumulative work hours plus 4 of the 10 M1/M2 classes offered that year), M2 → M Mechanic (another 1,875 cumulative work hours plus 4 more M1/M2 classes), and M Mechanic → Journeyman rank — which has no hour requirement but requires passing BTE's internal test or presenting a valid state electrician's license. Journeyman rank is a BTE recognition/classification, distinct from holding a state electrician's license. Throughout this progression you can continue your career with a signatory contractor and explore supervisory and specialty training through our other programs.",
   },
   {
     question: "How do I apply or enroll?",

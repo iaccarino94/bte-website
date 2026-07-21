@@ -14,11 +14,10 @@ export default function Footer() {
           {/* Identity */}
           <div>
             <h3 className="font-semibold text-gold mb-3 text-sm uppercase tracking-wider">
-              BTE Fund
+              Building Trades Educational Benefit Fund
             </h3>
             <p className="text-white/80 text-sm leading-relaxed">
-              Building Trades Educational Benefit Fund<br />
-              An ERISA-regulated electrical apprenticeship training fund<br />
+              An ERISA-regulated electrical apprenticeship training fund
               serving New York.
             </p>
             <p className="mt-4 text-white/70 text-sm leading-relaxed">
@@ -28,10 +27,6 @@ export default function Footer() {
             <p className="mt-3 text-white/70 text-sm">
               <a href="tel:5164877830" className="hover:text-white transition-colors">
                 (516) 487-7830
-              </a>
-              <br />
-              <a href="tel:5164415855" className="hover:text-white transition-colors">
-                (516) 441-5855
               </a>
             </p>
             <p className="mt-3 text-white/60 text-xs">

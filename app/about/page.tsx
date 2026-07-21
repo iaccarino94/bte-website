@@ -59,10 +59,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="space-y-5 text-charcoal leading-relaxed">
               <p>
-                Our flagship program is a <strong className="text-navy">five-year registered electrical apprenticeship</strong>,
-                recognized and registered with the New York State Department of Labor
-                (NYSDOL). The program is structured in annual levels, each combining
-                classroom instruction with supervised on-the-job training.
+                BTE administers a <strong className="text-navy">five-year electrical apprenticeship
+                training program</strong> for apprentices employed by signatory contractors —
+                whether or not their employer&apos;s apprenticeship program is registered with
+                the New York State Department of Labor (NYSDOL). The program is structured
+                in annual levels, each combining classroom instruction with supervised
+                on-the-job training; training quality and content are the same across both
+                tracks.
               </p>
               <p>
                 <strong className="text-navy">Classroom instruction</strong> runs approximately
@@ -71,10 +74,11 @@ export default function AboutPage() {
                 All instruction is provided at no cost to the apprentice.
               </p>
               <p>
-                <strong className="text-navy">On-the-job training (OJT)</strong> consists of
-                1,600 to 2,000 hours per year, performed under the direct supervision of a
-                licensed journeyman electrician. This hands-on experience is what truly
-                develops trade competency.
+                <strong className="text-navy">On-the-job training (OJT)</strong> requirements
+                depend on your track: 1,640 hours per year if your employer&apos;s apprenticeship
+                program is NYSDOL-registered, or 1,875 hours per year if it is not, performed
+                under the supervision of a journeyperson. This hands-on experience is what
+                truly develops trade competency.
               </p>
               <p>
                 <strong className="text-navy">Wages</strong> are set in accordance with the
@@ -82,11 +86,12 @@ export default function AboutPage() {
                 the program.
               </p>
               <p>
-                BTE directly administers its own NYSDOL-registered apprenticeship program.
-                Separately, BTE also helps individual signatory employers register and
-                administer their own NYSDOL-approved apprenticeship programs. Apprentices
-                may be enrolled through either path — the related instruction and curriculum
-                are the same.
+                BTE serves as the related instruction provider and administers apprenticeship
+                training on behalf of signatory employers, including those with
+                NYSDOL-registered apprenticeship programs. Individual signatory employers —
+                not BTE — are the sponsors of any NYSDOL-registered program. BTE administers
+                training for all apprentices, whether or not their employer&apos;s program is
+                registered; the related instruction and curriculum are the same either way.
               </p>
             </div>
             <div className="space-y-4">
@@ -113,16 +118,12 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-navy mb-6">Fund Structure & Governance</h2>
           <div className="max-w-3xl space-y-4 text-charcoal leading-relaxed">
             <p>
-              BTE is a jointly-trusteed benefit fund governed under the Employee Retirement
-              Income Security Act of 1974 (ERISA). The fund is administered by a Board of
-              Trustees composed of equal employer and union representation, as required by
-              the Taft-Hartley Act.
-            </p>
-            <p>
-              Employer contributions to the fund are made pursuant to the collective
-              bargaining agreement between signatory contractors and Local 363-A, USWU. These
-              contributions fund the operating costs of the apprenticeship programs,
-              including instructor salaries, facility costs, and instructional materials.
+              BTE is a multiemployer trust fund governed under the Employee Retirement Income
+              Security Act of 1974 (ERISA), administered by a Board of Trustees. Employer
+              contributions are made pursuant to the collective bargaining agreement between
+              signatory contractors and Local 363-A, USWU, and fund the operating costs of
+              the apprenticeship program, including instructor salaries, facility costs, and
+              instructional materials.
             </p>
             <p>
               BTE also operates under the name <strong className="text-navy">Building Trades
@@ -146,6 +147,43 @@ export default function AboutPage() {
                 Dickinson Group
               </a>
               . The fund&apos;s official Plan Documents govern all program rules and eligibility.
+            </p>
+          </div>
+        </section>
+
+        {/* Progression Ladder */}
+        <section className="mb-16 bg-offwhite rounded-xl p-8 lg:p-12">
+          <h2 className="text-3xl font-bold text-navy mb-6">After the Apprenticeship: Mechanic Progression</h2>
+          <div className="max-w-3xl space-y-4 text-charcoal leading-relaxed">
+            <p>
+              Upon successful completion of all coursework and OJT requirements, apprentices
+              become an <strong className="text-navy">M1 Mechanic</strong> — a classification,
+              not a state license. From there, mechanics progress through a structured ladder:
+            </p>
+            <ul className="space-y-3 list-disc list-inside">
+              <li>
+                <strong className="text-navy">M1 → M2 Mechanic:</strong> 1,875 cumulative work
+                hours plus 4 of the 10 M1/M2 classes offered that year.
+              </li>
+              <li>
+                <strong className="text-navy">M2 → M Mechanic:</strong> another 1,875
+                cumulative work hours plus 4 more M1/M2 classes.
+              </li>
+              <li>
+                <strong className="text-navy">M Mechanic → Journeyman rank:</strong> no hour
+                requirement — requires passing BTE&apos;s internal test or presenting a valid
+                state electrician&apos;s license.
+              </li>
+            </ul>
+            <p>
+              Journeyman rank is a BTE recognition/classification, distinct from holding a
+              state electrician&apos;s license. Throughout this progression, mechanics can
+              continue their career with a signatory contractor and explore supervisory and
+              specialty training through our{" "}
+              <Link href="/other-programs" className="text-navy underline hover:text-gold transition-colors">
+                Other Programs
+              </Link>
+              .
             </p>
           </div>
         </section>

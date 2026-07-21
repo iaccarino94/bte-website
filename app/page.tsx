@@ -28,8 +28,9 @@ function HeroSection() {
             <span className="text-gold">Electrical Workforce</span>
           </h1>
           <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
-            A five-year paid apprenticeship at no cost to you. Earn while you learn under
-            licensed journeymen, with classroom instruction backed by NYSDOL registration.
+            A five-year paid apprenticeship at no cost to you. Earn while you learn, with
+            related instruction delivered by BTE as your program&apos;s administrator —
+            whether your employer&apos;s apprenticeship program is NYSDOL-registered or not.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
@@ -63,7 +64,7 @@ function WhatWeDoSection() {
     {
       icon: "⚡",
       title: "Hands-On Training",
-      body: "Apprentices complete 1,600–2,000 hours of on-the-job training each year alongside a licensed journeyman electrician — real work on real job sites from day one.",
+      body: "Apprentices complete 1,640 OJT hours/year (NYSDOL-registered track) or 1,875 OJT hours/year (unregistered track) — real work on real job sites from day one.",
     },
     {
       icon: "📚",
@@ -77,8 +78,8 @@ function WhatWeDoSection() {
     },
     {
       icon: "🏛️",
-      title: "NYSDOL Registered",
-      body: "The program is registered with the New York State Department of Labor. We also help signatory contractors register their own apprenticeship programs with the state.",
+      title: "Registered & Unregistered Tracks",
+      body: "BTE serves as the related instruction provider and administers training on behalf of signatory employers — individual employers, not BTE, are the sponsors of NYSDOL-registered apprenticeship programs.",
     },
   ];
 
@@ -88,9 +89,10 @@ function WhatWeDoSection() {
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">What We Do</h2>
           <p className="text-charcoal text-lg max-w-2xl mx-auto">
-            BTE directly administers its own NYSDOL-registered electrical apprenticeship
-            program, and also helps individual signatory employers establish and administer
-            their own registered apprenticeship programs.
+            BTE serves as the related instruction provider and administers apprenticeship
+            training on behalf of signatory employers, including those with NYSDOL-registered
+            apprenticeship programs. Training quality and content are the same whether or not
+            your employer&apos;s program is NYSDOL-registered.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -118,10 +120,10 @@ function WhoWeServeSection() {
               <div>
                 <h3 className="font-bold text-navy text-lg mb-2">Apprentices</h3>
                 <p className="text-charcoal leading-relaxed">
-                  Individuals enrolled in BTE&apos;s own apprenticeship program, or registered
-                  through a signatory employer&apos;s NYSDOL-approved program that BTE helps
-                  administer. The BTE Fund covers the cost of related instruction either
-                  way — you just show up ready to learn.
+                  Individuals employed by a signatory employer — whether or not that
+                  employer&apos;s apprenticeship program is registered with NYSDOL. BTE
+                  administers related instruction training for all apprentices either way;
+                  the BTE Fund covers the cost regardless of track.
                 </p>
               </div>
               <div>
@@ -156,9 +158,11 @@ function WhoWeServeSection() {
                 ["Duration", "5 years (10 semesters)"],
                 ["Cost to Apprentice", "No cost — fully funded"],
                 ["Classroom Hours", "~180 hours/year"],
-                ["OJT Hours", "1,600–2,000 hours/year"],
+                ["OJT Hours (Registered)", "1,640 hours/year"],
+                ["OJT Hours (Unregistered)", "1,875 hours/year"],
                 ["Wages", "Set by the CBA; increase with each year of progression"],
-                ["Certification", "NYSDOL Registered Apprenticeship"],
+                ["Program Type", "Related instruction for registered & unregistered apprentices"],
+                ["Upon Completion", "M1 Mechanic (not a license)"],
               ].map(([label, value]) => (
                 <li key={label} className="flex gap-3 items-start">
                   <span className="text-gold font-bold text-lg leading-none mt-0.5">—</span>

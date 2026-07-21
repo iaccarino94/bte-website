@@ -37,10 +37,6 @@ export default function EnrollPage() {
               If you have questions before applying, call us at{" "}
               <a href="tel:5164877830" className="text-navy font-medium hover:underline">
                 (516) 487-7830
-              </a>{" "}
-              or{" "}
-              <a href="tel:5164415855" className="text-navy font-medium hover:underline">
-                (516) 441-5855
               </a>
               .
             </li>

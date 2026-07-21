@@ -39,9 +39,6 @@ export default function ContactPage() {
                   <a href="tel:5164877830" className="block hover:text-navy transition-colors">
                     (516) 487-7830
                   </a>
-                  <a href="tel:5164415855" className="block hover:text-navy transition-colors">
-                    (516) 441-5855
-                  </a>
                 </div>
               </div>
             </div>

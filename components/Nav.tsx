@@ -37,7 +37,7 @@ export default function Nav() {
               priority
             />
             <span className="text-white font-semibold text-sm leading-tight hidden sm:block">
-              Building Trades<br />Educational Fund
+              Building Trades<br />Educational Benefit Fund
             </span>
           </Link>
 

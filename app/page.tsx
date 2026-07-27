@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -9,16 +10,22 @@ export const metadata: Metadata = {
 
 function HeroSection() {
   return (
-    <section className="relative bg-navy overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "repeating-linear-gradient(45deg, #F5C518 0px, #F5C518 1px, transparent 1px, transparent 40px)",
-        }} />
-      </div>
+    <section className="relative bg-navy overflow-hidden min-h-[560px] flex items-center">
+      {/* Background photo */}
+      <Image
+        src="/hero.jpg"
+        alt="BTE apprentices holding certificates at their graduation ceremony, with staff and leadership"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
 
-      {/* Hero image placeholder */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      {/* Dark gradient overlay so headline/CTA text stays readable over the photo */}
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/40" />
+      <div className="absolute inset-0 bg-navy/20" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
         <div className="max-w-3xl">
           <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">
             New York Electrical Apprenticeship
@@ -46,13 +53,6 @@ function HeroSection() {
             </Link>
           </div>
         </div>
-      </div>
-
-      {/* Hero photo placeholder bar */}
-      <div className="relative bg-charcoal/30 py-3 text-center">
-        <p className="text-white/40 text-xs italic">
-          [Hero photo placeholder — provide image file to replace]
-        </p>
       </div>
     </section>
   );

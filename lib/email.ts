@@ -1,6 +1,9 @@
 import { Resend } from "resend";
 
-export const OFFICE_EMAIL = "office@bteducationfund.org";
+// TEMP: forced to a real inbox for sandbox delivery testing, since Resend's
+// sandbox sending address can only deliver to addresses verified in the
+// account. Revert to "office@bteducationfund.org" once testing is done.
+export const OFFICE_EMAIL = "paul@bteducationfund.org";
 
 // TEMP: forced to Resend's sandbox sending address to isolate the
 // mail.bteducationfund.org delivery issue from the form/CAPTCHA/backend logic.

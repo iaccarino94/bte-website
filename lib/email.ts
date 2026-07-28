@@ -2,10 +2,9 @@ import { Resend } from "resend";
 
 export const OFFICE_EMAIL = "office@bteducationfund.org";
 
-// Sandbox fallback only delivers to the Resend account owner's own address.
-// Set RESEND_FROM_EMAIL once a sending domain is verified in Resend for
-// real delivery to OFFICE_EMAIL.
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "BTE Fund <onboarding@resend.dev>";
+// bteducationfund.org is verified in Resend; RESEND_FROM_EMAIL can still
+// override this (e.g. for a staging environment on an unverified domain).
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "BTE Website <noreply@bteducationfund.org>";
 
 let client: Resend | null = null;
 

@@ -2,9 +2,10 @@ import { Resend } from "resend";
 
 export const OFFICE_EMAIL = "office@bteducationfund.org";
 
-// mail.bteducationfund.org is verified in Resend; RESEND_FROM_EMAIL can
-// still override this (e.g. for a staging environment on an unverified domain).
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "BTE Website <noreply@mail.bteducationfund.org>";
+// TEMP: forced to Resend's sandbox sending address to isolate the
+// mail.bteducationfund.org delivery issue from the form/CAPTCHA/backend logic.
+// Revert to "BTE Website <noreply@mail.bteducationfund.org>" once resolved.
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "BTE Website <onboarding@resend.dev>";
 
 let client: Resend | null = null;
 

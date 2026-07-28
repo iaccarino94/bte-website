@@ -1,32 +1,84 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "./TurnstileWidget";
+import { HONEYPOT_FIELD } from "@/lib/formOptions";
 
-type Status = "idle" | "success" | "error";
+type Status = "idle" | "submitting" | "success" | "error";
+
+const initialForm = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+  [HONEYPOT_FIELD]: "",
+};
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [form, setForm] = useState(initialForm);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: wire to backend in a later phase
-    console.log("Contact form submission:", form);
-    setStatus("success");
-    setForm({ name: "", email: "", phone: "", message: "" });
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, turnstileToken }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setForm(initialForm);
+      setTurnstileToken("");
+    } catch {
+      setErrorMessage("Something went wrong. Please check your connection and try again.");
+      setStatus("error");
+    }
+  }
+
+  const inputClass =
+    "w-full border border-gray-300 rounded px-4 py-2.5 text-charcoal text-sm focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy";
+
+  if (status === "success") {
+    return (
+      <div className="bg-green-50 border border-green-200 text-green-800 rounded px-4 py-3 text-sm">
+        Thank you for reaching out! We&apos;ll be in touch shortly.
+      </div>
+    );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="relative space-y-5">
+      {/* Honeypot — hidden from real users, left off-screen rather than display:none */}
+      <div className="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+        <label htmlFor={HONEYPOT_FIELD}>Leave this field blank</label>
+        <input
+          id={HONEYPOT_FIELD}
+          name={HONEYPOT_FIELD}
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form[HONEYPOT_FIELD]}
+          onChange={handleChange}
+        />
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-charcoal mb-1">
@@ -37,10 +89,11 @@ export default function ContactForm() {
             name="name"
             type="text"
             required
+            maxLength={150}
             value={form.name}
             onChange={handleChange}
             placeholder="Jane Smith"
-            className="w-full border border-gray-300 rounded px-4 py-2.5 text-charcoal text-sm focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy"
+            className={inputClass}
           />
         </div>
         <div>
@@ -52,10 +105,11 @@ export default function ContactForm() {
             name="email"
             type="email"
             required
+            maxLength={254}
             value={form.email}
             onChange={handleChange}
             placeholder="jane@example.com"
-            className="w-full border border-gray-300 rounded px-4 py-2.5 text-charcoal text-sm focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy"
+            className={inputClass}
           />
         </div>
       </div>
@@ -68,10 +122,11 @@ export default function ContactForm() {
           id="phone"
           name="phone"
           type="tel"
+          maxLength={20}
           value={form.phone}
           onChange={handleChange}
           placeholder="(516) 000-0000"
-          className="w-full border border-gray-300 rounded px-4 py-2.5 text-charcoal text-sm focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy"
+          className={inputClass}
         />
       </div>
 
@@ -83,27 +138,29 @@ export default function ContactForm() {
           id="message"
           name="message"
           required
+          maxLength={5000}
           rows={5}
           value={form.message}
           onChange={handleChange}
           placeholder="How can we help you?"
-          className="w-full border border-gray-300 rounded px-4 py-2.5 text-charcoal text-sm focus:outline-none focus:border-navy focus:ring-1 focus:ring-navy resize-y"
+          className={`${inputClass} resize-y`}
         />
       </div>
 
-      {status === "success" && (
-        <div className="bg-green-50 border border-green-200 text-green-800 rounded px-4 py-3 text-sm">
-          Thank you for reaching out! We&apos;ll be in touch shortly.
-          <br />
-          <span className="text-green-600 text-xs">(Note: Form submission is not yet connected to a backend. This is a placeholder confirmation.)</span>
+      <TurnstileWidget onToken={setTurnstileToken} />
+
+      {status === "error" && (
+        <div className="bg-red-50 border border-red-200 text-red-800 rounded px-4 py-3 text-sm">
+          {errorMessage}
         </div>
       )}
 
       <button
         type="submit"
-        className="w-full sm:w-auto bg-navy text-white font-semibold px-8 py-3 rounded hover:bg-navy-dark transition-colors text-sm"
+        disabled={status === "submitting" || !turnstileToken}
+        className="w-full sm:w-auto bg-navy text-white font-semibold px-8 py-3 rounded hover:bg-navy-dark transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Send Message
+        {status === "submitting" ? "Sending…" : "Send Message"}
       </button>
     </form>
   );

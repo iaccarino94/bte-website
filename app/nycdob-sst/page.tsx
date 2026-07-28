@@ -118,6 +118,41 @@ export default function NycdobSstPage() {
           </div>
         </section>
 
+        {/* Request form download */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-navy mb-6">Request Your SST Card</h2>
+          <div className="max-w-3xl bg-navy rounded-xl p-8 text-white">
+            <h3 className="font-bold text-gold text-lg mb-2">Request for SST Card Form</h3>
+            <p className="text-white/80 text-sm leading-relaxed mb-6">
+              Download the official request form below to begin the process.
+            </p>
+            <a
+              href="/documents/Request-for-SST-Card.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-6 py-3 rounded text-sm hover:bg-gold-dark transition-colors"
+            >
+              Download Request Form (PDF)
+            </a>
+
+            <div className="mt-8 pt-6 border-t border-white/20">
+              <h4 className="font-semibold text-white text-sm mb-2">Next Steps</h4>
+              <p className="text-white/80 text-sm leading-relaxed">
+                Complete the form in full, attach copies of all required documents
+                (driver&apos;s license, OSHA cards, and any other certifications listed on
+                page 2 of the form), and email everything to{" "}
+                <a
+                  href="mailto:SST@BTEducationFund.org"
+                  className="text-gold underline hover:no-underline"
+                >
+                  SST@BTEducationFund.org
+                </a>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <div className="bg-navy rounded-xl p-8 text-white text-center">
           <h2 className="text-xl font-bold mb-3">Questions About SST Requirements?</h2>

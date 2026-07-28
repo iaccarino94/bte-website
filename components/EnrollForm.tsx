@@ -1,30 +1,43 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "./TurnstileWidget";
+import {
+  CLASSIFICATION_OPTIONS,
+  ETHNICITY_OPTIONS,
+  GENDER_OPTIONS,
+  HONEYPOT_FIELD,
+  RACE_OPTIONS,
+  VETERAN_OPTIONS,
+} from "@/lib/formOptions";
 
-type Status = "idle" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
 
 const initialForm = {
-  firstName: "",
-  lastName: "",
+  first_name: "",
+  last_name: "",
   dob: "",
   email: "",
   phone: "",
+  cell_phone: "",
   address: "",
   city: "",
   state: "NY",
   zip: "",
-  employed: "",
-  contractorName: "",
-  bookNumber: "",
-  programYear: "",
-  hearAbout: "",
-  comments: "",
+  employer_name: "",
+  ethnicity: "",
+  race: "",
+  gender: "",
+  is_veteran: "",
+  requested_classification: "",
+  [HONEYPOT_FIELD]: "",
 };
 
 export default function EnrollForm() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -32,13 +45,33 @@ export default function EnrollForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: wire to backend in a later phase
-    console.log("Enrollment form submission:", form);
-    setStatus("success");
-    setForm(initialForm);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, turnstileToken }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setForm(initialForm);
+      setTurnstileToken("");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch {
+      setErrorMessage("Something went wrong. Please check your connection and try again.");
+      setStatus("error");
+    }
   }
 
   const inputClass =
@@ -55,10 +88,6 @@ export default function EnrollForm() {
           Thank you for submitting your enrollment application. Our staff will review
           your information and contact you shortly to confirm your placement.
         </p>
-        <p className="text-green-600 text-sm">
-          (Note: Form submission is not yet connected to a backend. This is a placeholder
-          confirmation. Your data was logged to the browser console only.)
-        </p>
         <button
           onClick={() => setStatus("idle")}
           className="mt-6 text-sm text-green-800 underline hover:no-underline"
@@ -70,7 +99,21 @@ export default function EnrollForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
+    <form onSubmit={handleSubmit} className="relative space-y-8">
+      {/* Honeypot — hidden from real users, left off-screen rather than display:none */}
+      <div className="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+        <label htmlFor={HONEYPOT_FIELD}>Leave this field blank</label>
+        <input
+          id={HONEYPOT_FIELD}
+          name={HONEYPOT_FIELD}
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form[HONEYPOT_FIELD]}
+          onChange={handleChange}
+        />
+      </div>
+
       {/* Personal Information */}
       <fieldset>
         <legend className="text-lg font-bold text-navy mb-4 pb-2 border-b border-gray-200 w-full">
@@ -78,22 +121,22 @@ export default function EnrollForm() {
         </legend>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="firstName" className={labelClass}>
+            <label htmlFor="first_name" className={labelClass}>
               First Name <span className="text-crimson">*</span>
             </label>
-            <input id="firstName" name="firstName" type="text" required value={form.firstName} onChange={handleChange} placeholder="Jane" className={inputClass} />
+            <input id="first_name" name="first_name" type="text" required maxLength={100} value={form.first_name} onChange={handleChange} placeholder="Jane" className={inputClass} />
           </div>
           <div>
-            <label htmlFor="lastName" className={labelClass}>
+            <label htmlFor="last_name" className={labelClass}>
               Last Name <span className="text-crimson">*</span>
             </label>
-            <input id="lastName" name="lastName" type="text" required value={form.lastName} onChange={handleChange} placeholder="Smith" className={inputClass} />
+            <input id="last_name" name="last_name" type="text" required maxLength={100} value={form.last_name} onChange={handleChange} placeholder="Smith" className={inputClass} />
           </div>
           <div>
             <label htmlFor="dob" className={labelClass}>
               Date of Birth <span className="text-crimson">*</span>
             </label>
-            <input id="dob" name="dob" type="date" required value={form.dob} onChange={handleChange} className={inputClass} />
+            <input id="dob" name="dob" type="date" required max={new Date().toISOString().slice(0, 10)} value={form.dob} onChange={handleChange} className={inputClass} />
           </div>
         </div>
       </fieldset>
@@ -108,113 +151,124 @@ export default function EnrollForm() {
             <label htmlFor="email" className={labelClass}>
               Email Address <span className="text-crimson">*</span>
             </label>
-            <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="jane@example.com" className={inputClass} />
+            <input id="email" name="email" type="email" required maxLength={254} value={form.email} onChange={handleChange} placeholder="jane@example.com" className={inputClass} />
           </div>
           <div>
             <label htmlFor="phone" className={labelClass}>
               Phone Number <span className="text-crimson">*</span>
             </label>
-            <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} placeholder="(516) 000-0000" className={inputClass} />
+            <input id="phone" name="phone" type="tel" required maxLength={20} value={form.phone} onChange={handleChange} placeholder="(516) 000-0000" className={inputClass} />
+          </div>
+          <div>
+            <label htmlFor="cell_phone" className={labelClass}>
+              Cell Phone
+            </label>
+            <input id="cell_phone" name="cell_phone" type="tel" maxLength={20} value={form.cell_phone} onChange={handleChange} placeholder="(516) 000-0000" className={inputClass} />
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="address" className={labelClass}>
               Street Address <span className="text-crimson">*</span>
             </label>
-            <input id="address" name="address" type="text" required value={form.address} onChange={handleChange} placeholder="123 Main St" className={inputClass} />
+            <input id="address" name="address" type="text" required maxLength={200} value={form.address} onChange={handleChange} placeholder="123 Main St" className={inputClass} />
           </div>
           <div>
             <label htmlFor="city" className={labelClass}>
               City <span className="text-crimson">*</span>
             </label>
-            <input id="city" name="city" type="text" required value={form.city} onChange={handleChange} className={inputClass} />
+            <input id="city" name="city" type="text" required maxLength={100} value={form.city} onChange={handleChange} className={inputClass} />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label htmlFor="state" className={labelClass}>State</label>
-              <input id="state" name="state" type="text" value={form.state} onChange={handleChange} className={inputClass} />
+              <label htmlFor="state" className={labelClass}>
+                State <span className="text-crimson">*</span>
+              </label>
+              <input id="state" name="state" type="text" required maxLength={50} value={form.state} onChange={handleChange} className={inputClass} />
             </div>
             <div>
               <label htmlFor="zip" className={labelClass}>
                 ZIP <span className="text-crimson">*</span>
               </label>
-              <input id="zip" name="zip" type="text" required value={form.zip} onChange={handleChange} placeholder="11000" className={inputClass} />
+              <input id="zip" name="zip" type="text" required maxLength={10} value={form.zip} onChange={handleChange} placeholder="11000" className={inputClass} />
             </div>
           </div>
         </div>
       </fieldset>
 
-      {/* Eligibility */}
+      {/* Employment */}
       <fieldset>
         <legend className="text-lg font-bold text-navy mb-4 pb-2 border-b border-gray-200 w-full">
-          Employment &amp; Eligibility
+          Employment
         </legend>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div className="sm:col-span-2">
-            <label htmlFor="employed" className={labelClass}>
-              Are you currently employed by a Local 363-A, USWU signatory electrical contractor?{" "}
-              <span className="text-crimson">*</span>
+          <div>
+            <label htmlFor="employer_name" className={labelClass}>
+              Employer Name
             </label>
-            <select id="employed" name="employed" required value={form.employed} onChange={handleChange} className={inputClass}>
+            <input id="employer_name" name="employer_name" type="text" maxLength={200} value={form.employer_name} onChange={handleChange} placeholder="ABC Electrical Co. (leave blank if none yet)" className={inputClass} />
+          </div>
+          <div>
+            <label htmlFor="requested_classification" className={labelClass}>
+              Requested Classification <span className="text-crimson">*</span>
+            </label>
+            <select id="requested_classification" name="requested_classification" required value={form.requested_classification} onChange={handleChange} className={inputClass}>
               <option value="">Select one</option>
-              <option value="yes">Yes</option>
-              <option value="no">No — I am seeking employment</option>
-              <option value="pending">In process of being hired</option>
+              {CLASSIFICATION_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>{opt}</option>
+              ))}
             </select>
-          </div>
-          <div>
-            <label htmlFor="contractorName" className={labelClass}>
-              Employer / Contractor Name
-            </label>
-            <input id="contractorName" name="contractorName" type="text" value={form.contractorName} onChange={handleChange} placeholder="ABC Electrical Co." className={inputClass} />
-          </div>
-          <div>
-            <label htmlFor="bookNumber" className={labelClass}>
-              Local 363-A Member Number (if applicable)
-            </label>
-            <input id="bookNumber" name="bookNumber" type="text" value={form.bookNumber} onChange={handleChange} className={inputClass} />
           </div>
         </div>
       </fieldset>
 
-      {/* Program */}
+      {/* EEO Information */}
       <fieldset>
         <legend className="text-lg font-bold text-navy mb-4 pb-2 border-b border-gray-200 w-full">
-          Program Information
+          Demographic Information
         </legend>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="programYear" className={labelClass}>
-              Applying for which program year? <span className="text-crimson">*</span>
+            <label htmlFor="ethnicity" className={labelClass}>
+              Ethnicity <span className="text-crimson">*</span>
             </label>
-            <select id="programYear" name="programYear" required value={form.programYear} onChange={handleChange} className={inputClass}>
+            <select id="ethnicity" name="ethnicity" required value={form.ethnicity} onChange={handleChange} className={inputClass}>
               <option value="">Select one</option>
-              <option value="new">New applicant (Year 1)</option>
-              <option value="year2">Year 2</option>
-              <option value="year3">Year 3</option>
-              <option value="year4">Year 4</option>
-              <option value="year5">Year 5</option>
-              <option value="transfer">Transfer from another program</option>
-              <option value="unsure">Not sure — please advise</option>
+              {ETHNICITY_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>{opt}</option>
+              ))}
             </select>
           </div>
           <div>
-            <label htmlFor="hearAbout" className={labelClass}>
-              How did you hear about us?
+            <label htmlFor="race" className={labelClass}>
+              Race <span className="text-crimson">*</span>
             </label>
-            <select id="hearAbout" name="hearAbout" value={form.hearAbout} onChange={handleChange} className={inputClass}>
+            <select id="race" name="race" required value={form.race} onChange={handleChange} className={inputClass}>
               <option value="">Select one</option>
-              <option value="employer">My employer / contractor</option>
-              <option value="local363a">Local 363-A / USWU</option>
-              <option value="friend">Friend or family member</option>
-              <option value="online">Online search</option>
-              <option value="other">Other</option>
+              {RACE_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>{opt}</option>
+              ))}
             </select>
           </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="comments" className={labelClass}>
-              Additional Information or Questions
+          <div>
+            <label htmlFor="gender" className={labelClass}>
+              Gender <span className="text-crimson">*</span>
             </label>
-            <textarea id="comments" name="comments" rows={4} value={form.comments} onChange={handleChange} placeholder="Anything else you'd like us to know..." className={`${inputClass} resize-y`} />
+            <select id="gender" name="gender" required value={form.gender} onChange={handleChange} className={inputClass}>
+              <option value="">Select one</option>
+              {GENDER_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>{opt}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="is_veteran" className={labelClass}>
+              Veteran Status <span className="text-crimson">*</span>
+            </label>
+            <select id="is_veteran" name="is_veteran" required value={form.is_veteran} onChange={handleChange} className={inputClass}>
+              <option value="">Select one</option>
+              {VETERAN_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>{opt}</option>
+              ))}
+            </select>
           </div>
         </div>
       </fieldset>
@@ -222,15 +276,22 @@ export default function EnrollForm() {
       <div className="bg-offwhite rounded-lg p-4 text-xs text-charcoal leading-relaxed">
         By submitting this form, you consent to being contacted by BTE Fund staff regarding
         your enrollment application. Your information will not be shared with third parties.
-        This site does not yet transmit form data to a server — submission will be connected
-        to our intake system in a future update.
       </div>
+
+      <TurnstileWidget onToken={setTurnstileToken} />
+
+      {status === "error" && (
+        <div className="bg-red-50 border border-red-200 text-red-800 rounded px-4 py-3 text-sm">
+          {errorMessage}
+        </div>
+      )}
 
       <button
         type="submit"
-        className="w-full sm:w-auto bg-gold text-navy font-bold px-10 py-4 rounded text-base hover:bg-gold-dark transition-colors"
+        disabled={status === "submitting" || !turnstileToken}
+        className="w-full sm:w-auto bg-gold text-navy font-bold px-10 py-4 rounded text-base hover:bg-gold-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Submit Enrollment Application
+        {status === "submitting" ? "Submitting…" : "Submit Enrollment Application"}
       </button>
     </form>
   );

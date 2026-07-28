@@ -2,9 +2,9 @@ import { Resend } from "resend";
 
 export const OFFICE_EMAIL = "office@bteducationfund.org";
 
-// bteducationfund.org is verified in Resend; RESEND_FROM_EMAIL can still
-// override this (e.g. for a staging environment on an unverified domain).
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "BTE Website <noreply@bteducationfund.org>";
+// mail.bteducationfund.org is verified in Resend; RESEND_FROM_EMAIL can
+// still override this (e.g. for a staging environment on an unverified domain).
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "BTE Website <noreply@mail.bteducationfund.org>";
 
 let client: Resend | null = null;
 

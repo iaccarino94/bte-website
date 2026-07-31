@@ -2,9 +2,10 @@ import { Resend } from "resend";
 
 export const OFFICE_EMAIL = "office@bteducationfund.org";
 
-// mail.bteducationfund.org is verified in Resend; RESEND_FROM_EMAIL can
-// still override this (e.g. for a staging environment on an unverified domain).
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "BTE Website <noreply@mail.bteducationfund.org>";
+// proxy.bieca.net is verified in Resend and routes around the FortiMail
+// rejection issue on the main domain. RESEND_FROM_EMAIL can still override
+// this (e.g. for a staging environment on an unverified domain).
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "BTE Website <noreply@proxy.bieca.net>";
 
 let client: Resend | null = null;
 
